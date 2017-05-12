@@ -40,22 +40,22 @@ turn_counter = 1
 
 def user_input(turn_counter):
 		user = int(raw_input("Player: Mark your position: "))
-		if (turn_counter % 2 != 0):
-				p[user - 1] = "X"
+		if (p[user - 1] == "X" or p[user - 1] == "O"):
+				print("Please choose an unmarked position.")
+				user_input(turn_counter)  
 		else:
-				p[user - 1] = "O"
+				if (turn_counter % 2 != 0):
+						p[user - 1] = "X"
+				else:
+						p[user - 1] = "O"
 
-		print(turn_counter)
-
-		print_board()
-		# return turn_counter
+				print_board()
 
 
-x = 1
+x = 0
 while(x < 9): 
 	user_input(turn_counter)  
 	turn_counter = turn_counter + 1
-	print(turn_counter)
 	x += 1
 
 
