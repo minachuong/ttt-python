@@ -39,7 +39,13 @@ print_board()
 turn_counter = 1
 
 def user_input(turn_counter):
-		user = int(raw_input("Player: Mark your position: "))
+		if (turn_counter % 2 != 0):
+				player = "First"
+		else:
+				player = "Second"
+
+		user = int(raw_input(player + " Player: Mark your position: "))
+
 		if (p[user - 1] == "X" or p[user - 1] == "O"):
 				print("Please choose an unmarked position.")
 				user_input(turn_counter)  
@@ -54,10 +60,12 @@ def user_input(turn_counter):
 
 x = 0
 while(x < 9): 
-	user_input(turn_counter)  
-	turn_counter = turn_counter + 1
-	x += 1
+		user_input(turn_counter)  
+		turn_counter = turn_counter + 1
+		x += 1
 
+def check_winner(marked_array)
+		
 
 
 
